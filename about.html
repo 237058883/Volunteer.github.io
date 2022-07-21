@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/cart.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <title>关于我们页面</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*导航栏，高100，宽1280*/
+    .container1 {
+      width: 1280px;
+      height: 100px;
+    }
+
+    /*文章整体框架，高1680，宽1280*/
+    .about-kuangjia {
+      width: 1280px;
+      height: 2600px;
+      background-color: rgb(255, 255, 255);
+      padding-left: 0px;
+    }
+
+    .about-head {
+      width: 1280px;
+      height: 70px;
+      background-color: #1792FA;
+      padding-left: 0px;
+      padding-left: 100px;
+    }
+
+    .left {
+      width: 365px;
+      height: 2530px;
+      padding: 0;
+      padding-left: 100px;
+      padding-top: 40px;
+    }
+
+    .right {
+      width: 900px;
+      height: 2530px;
+      padding: 0;
+    }
+
+    .title {
+      font-size: 36px;
+      color: #1792FA;
+      padding-top: 50px;
+      padding-left: 50px;
+    }
+
+    .context {
+      padding-left: 20px;
+      padding-right: 50px;
+      padding-top: 20px;
+      font-size: 20px;
+    }
+
+    .min-title {
+      font-size: 26px;
+      font-weight: 500px;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+    }
+
+    .right img {
+      width: 400px;
+      height: 400px;
+      padding-top: 10px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，导航 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="home.html">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="information.html">志愿者填写</a></li>
+              <li><a href="information-finish.html">志愿者信息</a></li>
+              <li><a href="forumloading.html">论坛</a></li>
+              <li><a href="map.html">地图定位</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="storeloading.html">商城首页</a></li>
+              <li><a href="cartloading.html">购物车清单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="#">关于我们</a></li>
+              <li><a href="#">合作产品</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 第二部分 关于我们页面 -->
+  <div class="container about-kuangjia">
+    <div class="about-head"><img src="img/about/pages-head_2.jpg"><img src="img/about/pages-head_1.jpg"><img
+        src="img/about/pages-head_2.png"><img src="img/about/pages-head_1.jpg">
+    </div>
+    <div>
+      <div>
+        <div class="col-xs-3 left">
+          <div style="font-size: 28px;font-weight: 700;">广州理工学院
+          </div>
+          <div><img src="img/about/bar.png"></div>
+          <div style="color: #1792FA; font-size: 22px;padding-top: 10px;">关于我们</div>
+        </div>
+        <div class="col-xs-9 right">
+          <div class="title">广州理工学院</div>
+          <div class="context">
+            &nbsp;&nbsp;&nbsp;&nbsp;广州理工学院（Guangzhou Institute of Science and
+            Technology）坐落于广东省广州市白云区，是经教育部批准设立的全日制普通本科高校，广东省民办本科高校第一批硕士学位授予立项建设单位，广东省博士工作站设站单位，广州市知识产权试点学校。
+            学校前身为2000年12月经省人民政府批准创办的民办天河职业学院，2001年5月经教育厅批准更名为广东职业技术师范学院天河学院，2006年4月经教育部批准转为独立学院，2011年12月通过学士学位评估，2018年12月经教育部同意更名为广东技术师范大学天河学院，2020年6月30日经教育部同意转设为广州理工学院，成为独立设置的普通本科高校，2021年5月，广州理工学院获批为广东省高校硕士学位授予立项建设单位。
+            截至2021年6月，学校设有11个二级学院，3个产业学院，43个本科专业；有教职工630多人，全日制在校学生13000多人。
+            <div class="min-title"><b>办学历史</b></div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2000年12月，经广东省人民政府批准创办天河职业技术学院。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2001年5月，经广东省教育厅批准，更名为广东职业技术师范学院天河学院（专科）。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2006年4月，经教育部批准由广东技术师范学院和广东民建实业有限公司共同创办独立学院（本科）。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2011年12月，通过学士学位评估。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;2018年12月，经教育部同意更名为广东技术师范大学天河学院。</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;2019年9月，学校正式申请转设，教育厅组织广东省高校设置委员会专家组进校现场考察评估；9月底，通过广东省高校设置评议委员会评议；10月，广东省人民政府致函教育部，报请批准该校转设为广州理工学院；12月，教育部组织全国高校设置评议委员会专家组进校开展实地考察。
+            </p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;2020年6月30日，《教育部关于同意广东技术师范大学天河学院转设为广州理工学院的函》同意广东技术师范大学天河学院转设为独立设置的本科层次民办普通高等学校并更名为广州理工学院。
+            </p>
+            广州理工学院举行新校名揭牌仪式
+            广州理工学院举行新校名揭牌仪式
+            2021年5月，广州理工学院获批为广东省高校硕士学位授予立项建设单位；11月13日，广州理工学院举行新校名揭牌仪式。
+            <div class="min-title"><b>教学建设</b></div>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;截至2021年6月，学校有省级一流专业1个、省级质量工程78项；省质量工程项目中，省级特色专业4个、省级专业综合改革试点项目6项、省级应用型人才培养示范专业2个、省级人才培养模式创新实验区3个、省级应用型人才培养示范基地2个、省级实验教学示范中心3个、省级大学生实践教学基地6个、省级卓越人才培养计划2项、省级应用型人才培养课程建设项目1项、省级一流课程1门、省级金课1门、省级精品视频公开课1门、省级精品资源共享课1门、省级在线开放课程2门，省级产业学院1个。
+            </p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省级一流专业：人力资源管理</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省级特色专业：土木工程、会计学、人力资源管理</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省级应用型人才培养示范专业：电子信息工程、电气工程及其自动化</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省级专业综合改革试点项目：电子信息工程</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省一流本科课程：军事理论</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;省级产业学院：智能制造与机器人</p>
+            <div class="min-title"><b>师资力量</b></div>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;截至2021年6月，学校有教职工630多人，其中专任教师530多人、副高级及以上职称教师160多人，拥有一批专家、博士、海归学者、双师型教师、企业特聘专家；省级教学团队3个。
+              省高等学校“千百十人才培养工程”</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;校级培养对象：黄爱青、吴从晓、王如意</p>
+            <div class="min-title"><b>文化传统</b></div>
+            <p><b>&nbsp;&nbsp;&nbsp;&nbsp;校徽</b></p>
+            <center><img src="img/about/校徽.jpg"></center>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;标志的整体结构稳重、色彩明快、视觉清晰。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;标志的色彩用科技蓝，寓意科技、创新、理工等属性，象征着天空、梦想。</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;标志的基本造型由学校标志性建筑图书馆、书籍、翅膀以及2001数字等组成。</p>
+            <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;图书馆、书籍造型寓意探索、梦想，知识、力量，体现了学校的书香气息。图书馆造型两边是对称的“工”字，突显了学校的理工科性质。翅膀则寓意翱翔、梦想，象征着师生们一路探索，带梦飞翔。
+              2001，代表学校的建校时间。</p>
+            <p><b>&nbsp;&nbsp;&nbsp;&nbsp;校训</b></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;学用心志，行知诚明</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+  </script>
+  <!-- 第三部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" />
+          </a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

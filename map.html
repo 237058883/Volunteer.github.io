@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/cart.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=Xd4hyQ6IUBKP8OuojsqTM6WR6HyOoujD"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <title>地图页面</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*导航栏，高100，宽1280*/
+    .container1 {
+      width: 1280px;
+      height: 100px;
+    }
+
+    /*文章整体框架，高1680，宽1280*/
+    .map-kuangjia {
+      width: 1280px;
+      height: 1200px;
+      background-color: rgb(255, 255, 255);
+      padding-left: 0px;
+      background: url("img/1/main-bg.png");
+    }
+
+    .select {
+      width: 1280px;
+      height: 150px;
+      background: url("img/1/main-bg.png");
+      ;
+    }
+
+    #map {
+      width: 1280px;
+      height: 900px;
+    }
+
+    .select a {
+      font-size: 36px;
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，导航 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="home.html">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="information.html">志愿者填写</a></li>
+              <li><a href="information-finish.html">志愿者信息</a></li>
+              <li><a href="forumloading.html">论坛</a></li>
+              <li><a href="map.html">地图定位</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="storeloading.html">商城首页</a></li>
+              <li><a href="cartloading.html">购物车清单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="#">合作产品</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 第二部分 地图页面 -->
+  <div class="container map-kuangjia">
+    <div class="select" style="padding-top:50px;">
+      <span id="r-result" style="font-size: 30px;">请输入搜素的地名:<input type="text" id="suggestId" size="50" value="百度"
+          style="width:900px;font-size: 30px;"></span>
+      <span id="searchResultPanel"
+        style="border:1px solid #C0C0C0;width:900px;height:200px; display:none;font-size: 30px;">
+      </span><input type="button" value="搜索" style="width: 120px;font-size: 30px;background-color: white;">
+    </div>
+    <div id="map">
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //创建地图实例
+    var map = new BMap.Map("map");
+
+    //设置中心点坐标
+    //var point = new BMap.Point(116.404, 39.915);
+    //地图初始化，同时设置地图展示级别
+    //map.centerAndZoom(point, 15); 
+
+
+    map.centerAndZoom(new BMap.Point(116.280190, 40.049191), 19);
+    map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+    map.addControl(new BMap.OverviewMapControl());
+    map.addControl(new BMap.MapTypeControl());
+
+
+    function G(id) {
+      return document.getElementById(id);
+    }
+
+
+    map.centerAndZoom("北京", 12);                   // 初始化地图,设置城市和地图级别。
+
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+      {
+        "input": "suggestId"
+        , "location": map
+      });
+
+    ac.addEventListener("onhighlight", function (e) {  //鼠标放在下拉列表上的事件
+      var str = "";
+      var _value = e.fromitem.value;
+      var value = "";
+      if (e.fromitem.index > -1) {
+        value = _value.province + _value.city + _value.district + _value.street + _value.business;
+      }
+      str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+      value = "";
+      if (e.toitem.index > -1) {
+        _value = e.toitem.value;
+        value = _value.province + _value.city + _value.district + _value.street + _value.business;
+      }
+      str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+      G("searchResultPanel").innerHTML = str;
+    });
+
+    var myValue;
+    ac.addEventListener("onconfirm", function (e) {    //鼠标点击下拉列表后的事件
+      var _value = e.item.value;
+      myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+      G("searchResultPanel").innerHTML = "onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+      setPlace();
+    });
+
+    function setPlace() {
+      map.clearOverlays();    //清除地图上所有覆盖物
+      function myFun() {
+        var pp = local.getResults().getPoi(0).point;    //获取第一个智能搜索的结果
+        map.centerAndZoom(pp, 18);
+        map.addOverlay(new BMap.Marker(pp));    //添加标注
+      }
+      var local = new BMap.LocalSearch(map, { //智能搜索
+        onSearchComplete: myFun
+      });
+      local.search(myValue);
+    }
+  </script>
+  <!-- 第三部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" /></a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

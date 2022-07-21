@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/cart.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/elementui.js"></script>
+  <script src="/ueditor/ueditor1_4_3-utf8-asp/ueditor.config.js"></script>
+  <script src="/ueditor/ueditor1_4_3-utf8-asp/ueditor.all.min.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/elementui.css">
+  <title>论坛页面</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*导航栏，高100，宽1280*/
+    .container1 {
+      width: 1280px;
+      height: 100px;
+    }
+
+    /*文章整体框架，高1680，宽1280*/
+    .forum-kuangjia {
+      width: 1280px;
+      height: 1860px;
+      background-color: rgb(255, 255, 255);
+      padding-left: 0px;
+    }
+
+    .top {
+      width: 1280px;
+      height: 50px;
+      background-color: rgb(117, 117, 117);
+      padding-left: 0px;
+    }
+
+    .top-nav {
+      font-size: 24px;
+      color: white;
+      float: right;
+      margin-right: 18px;
+      line-height: 50px;
+    }
+
+    #forum-neirong {
+      width: 1230px;
+      height: 1730px;
+      margin-left: 25px;
+      margin-top: 25px;
+    }
+
+    #postbtn {
+      background-color: rgb(0, 88, 202);
+      border: 1px solid rgb(0, 88, 202);
+      width: 130px;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .list-replay {
+      width: 1230px;
+      height: 1590px;
+      border: 1px solid #ccc;
+    }
+
+    .list-replay thead tr td {
+      border: 1px solid #ccc;
+      font-size: 20px;
+    }
+
+    thead {
+      height: 60px;
+      background-color: rgb(218, 218, 218);
+    }
+
+    .list-replay tbody tr td,
+    th {
+      border: 1px solid #ccc;
+      font-size: 20px;
+    }
+
+    .tr-first {
+      border-top: 10px solid rgb(167, 178, 201);
+      border-bottom: 2px dashed rgb(184, 184, 184);
+    }
+
+
+    tbody th {
+      background-color: rgb(218, 218, 218);
+    }
+
+    .tr-last {
+      border-top: 3px dashed rgb(184, 184, 184);
+    }
+
+    .list-page {
+      margin-top: 10px;
+      float: right;
+    }
+
+    .img-biankuang {
+      width: 160px;
+      height: 160px;
+      background-color: #fff;
+      margin-left: 55px;
+      padding-top: 5px;
+      padding-left: 5px;
+    }
+
+    .imgrc {
+      width: 150px;
+      height: 150px;
+    }
+
+    .text-left {
+      margin-left: 50px;
+      margin-top: 10px;
+    }
+
+    table span {
+      margin-left: 10px;
+    }
+
+    a {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，导航 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="home.html">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="information.html">志愿者填写</a></li>
+              <li><a href="information-finish.html">志愿者信息</a></li>
+              <li><a href="forum.html">论坛</a></li>
+              <li><a href="map.html">地图定位</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="storeloading.html">商城首页</a></li>
+              <li><a href="cartloading.html">购物车清单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="#">合作产品</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 第二部分 论坛页面 -->
+  <div class="container forum-kuangjia" id="postlist">
+    <div class="top">
+      <span class="top-nav">注销</span>
+      <span class="top-nav">admin</span>
+    </div>
+    <div id="forum-neirong">
+      <el-button type="primary" id="postbtn">发帖</el-button>
+      <span class="list-page">
+        <el-pagination background layout="prev, pager, next" :total="50">
+        </el-pagination>
+      </span>
+      <div class="list-replay">
+        <table>
+          <thead>
+            <!-- 表头 标题-->
+            <tr>
+              <td style="width: 280px"><span>查看：232 | 回复：482</span></td>
+              <td style="width: 950px"><span>全国西部计划工作视频调度会召开</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 第一个 发表人-->
+            <tr class="tr-first">
+              <td style="width: 280px;height: 50px;background-color: rgb(218, 218, 218);"><span>1</span></td>
+              <td style="width: 950px"><span>发表于 2022-03-25 10:30</span></td>
+            </tr>
+            <tr>
+              <th style="width: 280px" height="300px" rowspan="2">
+                <div class="img-biankuang">
+                  <div class="imgrc"><img src="img/forum/论坛头像.jpg" height="150px" width="150px"></div>
+                </div>
+                <div class="text-left"><span>admin</span></div>
+                <div class="text-left"><span>等级1级</span></div>
+                </td>
+              <td style="width: 950px;vertical-align:text-top;padding-top: 10px;" height="250px">
+                <span>
+                  &nbsp;&nbsp;本报北京9月10日电（中国青年报·中国青年网记者陈凤莉）9月10日，西部计划全国项目办组织召开全国西部计划工作视频调度会。会议探索采用网络视频会形式，依托“学习强国”平台的视频会议系统进行。西部计划全国项目办主要负责同志出席会议并讲话，28个省级西部计划项目办主要负责同志和全国项目办有关同志参加会议。</span>
+              </td>
+            </tr>
+            <tr class="tr-last">
+              <td style="width: 950px"><span><a> 回复</a> </span><span><a>顶(25)</a> </span><span><a>踩(0)</a> </span>
+              </td>
+            </tr>
+            <!-- 第二个 发表人-->
+            <tr class="tr-first">
+              <td style="width: 280px;height: 50px;background-color: rgb(218, 218, 218);"><span>2</span></td>
+              <td style="width: 950px"><span>发表于 2022-03-25 10:59</span></td>
+            </tr>
+            <tr>
+              <th style="width: 280px" height="300px" rowspan="2">
+                <div class="img-biankuang">
+                  <div class="imgrc"><img src="img/forum/论坛头像.jpg" height="150px" width="150px"></div>
+                </div>
+                <div class="text-left"><span>Perter</span></div>
+                <div class="text-left"><span>等级1级</span></div>
+                </td>
+              <td style="width: 950px;vertical-align:text-top;padding-top: 10px;" height="250px">
+                <span>
+                  &nbsp;&nbsp;nice！</span>
+              </td>
+            </tr>
+            <tr class="tr-last">
+              <td style="width: 950px"><span><a>回复</a> </span><span><a>顶(7)</a> </span><span><a>踩(0)</a></span>
+              </td>
+            </tr>
+            <!-- 第三个 发表人-->
+            <tr class="tr-first">
+              <td style="width: 280px;height: 50px;background-color: rgb(218, 218, 218);"><span>3</span></td>
+              <td style="width: 950px"><span>发表于 2022-03-25 14:13</span></td>
+            </tr>
+            <tr>
+              <th style="width: 280px" height="300px" rowspan="2">
+                <div class="img-biankuang">
+                  <div class="imgrc"><img src="img/forum/论坛头像.jpg" height="150px" width="150px"></div>
+                </div>
+                <div class="text-left"><span>admin</span></div>
+                <div class="text-left"><span>等级1级</span></div>
+                </td>
+              <td style="width: 950px;vertical-align:text-top;padding-top: 10px;" height="250px">
+                <span>
+                  &nbsp;&nbsp;感谢回复！请发表一下意见吧。</span>
+              </td>
+            </tr>
+            <tr class="tr-last">
+              <td style="width: 950px"><span><a>回复</a> </span><span><a>顶(2)</a> </span><span><a>踩(0)</a> </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="margin-top: 20px;margin-bottom: 20px;text-align: right;">
+          <el-pagination background layout="prev, pager, next" :total="50">
+          </el-pagination>
+        </div>
+        <div id="replay-editor" style="height:300px"></div>
+      </div>
+      <div style="text-align:right">
+        <form action="forum.html">
+          <input type="button" style="color:white;height:50px;" id="postbtn" class="pobtn" value="发帖">
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+
+      el: "#postlist",
+      mounted() {
+        let ue = UE.getEditor('replay-editor', {
+          initalFrameWidth: '100%',
+        })
+      }
+    })
+    let pobtn = document.querySelector(".pobtn")
+    pobtn.onclick = function () {
+      alert("发表成功!");
+      location.href = "forumdetail-post.html";
+    }
+  </script>
+  <!-- 第三部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" /></a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

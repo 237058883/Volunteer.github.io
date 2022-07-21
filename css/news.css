@@ -1,0 +1,47 @@
+.wenzhang-neirong > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 20px;
+}
+.wenzhang-neirong > p {
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+.wenzhang-beijing {
+  width: 1280px;
+  height: 1680px;
+  background: url("img/1/main-bg.1e1ab6c.png") no-repeat top center;
+  padding-left: 0;
+}
+.wenzhang-daohang {
+  width: 300px;
+  height: 440px;
+  border: 1px rgba(104, 48, 48, 0.3) solid;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 40px;
+  margin-left: 80px;
+}
+.wenzhang-daohang > p {
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+.wenzhang-daohang > ul li {
+  margin-left: 30px;
+  font-size: 18px;
+  margin-top: 30px;
+}
+.wenzhang-daohang > ul li a:link {
+  color: #000000;
+}
+.wenzhang-daohang > ul li a:visited {
+  color: #000000;
+}
+.wenzhang-daohang > ul li a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .img1 {
+    text-align: center;
+  }
+
+  .img1 img {
+    width: auto;
+    height: 960px;
+  }
+
+  .btn {
+    background: rgb(255, 255, 255);
+    color: black;
+    font-size: 36px;
+    height: 60px;
+    width: 160px;
+    float: right;
+    margin-right: 20px;
+  }
+
+  .title {
+    position: absolute;
+    left: 38%;
+    top: 13%;
+    font-size: 40px;
+    color: rgb(92, 91, 117);
+    font-family: "幼圆";
+    letter-spacing: 30px;
+    font-weight: 600;
+    text-shadow: 3px 3px rgb(201, 201, 201);
+  }
+
+  .title2 {
+    position: absolute;
+    left: 38%;
+    top: 20%;
+    font-size: 40px;
+    font-family: "幼圆";
+    letter-spacing: 30px;
+    font-weight: 600;
+    text-shadow: 3px 3px rgb(201, 201, 201);
+  }
+
+  .show {
+    font-size: 40px;
+    letter-spacing: 30px;
+    font-weight: 600;
+    text-shadow: 3px 3px rgb(201, 201, 201);
+    font-family: "幼圆";
+  }
+
+  .font {
+    color: rgb(92, 91, 117);
+  }
+
+  .cft {
+    color: rgb(69, 164, 180);
+  }
+
+  .bft {
+    color: rgb(173, 180, 69);
+  }
+</style>
+
+<body>
+
+  <div class="img1">
+    <img src="img/loading6.gif">
+  </div>
+  <span class="title"><span
+      class="ft">进</span><span>入</span><span>商</span><span>城</span><span>中</span><span>...</span></span>
+  <span class="title2"></span>
+  <button class="btn" onclick="stoprun()">不跳转</button>
+
+</body>
+<script>
+  function stoprun() {
+    window.location.href = 'homeloading-res.html'
+  }
+  let font = document.querySelectorAll(".title span");
+  let n = 0;
+  let x = 0;
+  let time1 = null;
+  let time2 = null;
+  let change = false;
+  function cgblack() {
+    if (n < font.length) {
+      console.log('n=' + n)
+      let i = n;
+      font[i].className = "cft"
+      n = i + 1; change = true;
+      return n;
+    }
+  }
+  function flash() {
+
+    time1 = setInterval("if(n<font.length){cgblack()}", 1000);
+
+  }
+
+  function clear1() {
+    clearInterval(time1)
+  }
+
+  function cgblue() {
+
+    time2 = setInterval("if(x<font.length){cg()}", 1000)
+  }
+  function flash2() {
+    {
+      setTimeout("cgblue()", 6000)
+    }
+  }
+  function cg() {
+    if (x < font.length) {
+      console.log('x=' + x)
+      let i = x;
+      font[i].className = "bft"
+      x = i + 1;
+      change = false;
+      return x;
+    }
+  }
+  function clear2() {
+    clearInterval(time2)
+  }
+
+  function turnrun() {
+
+    flash();
+    flash2();
+    setInterval("n=0", 12000)
+    setInterval("x=0", 18000)
+  }
+  function goto() {
+    setTimeout("window.location.href = 'store.html'", 1800)
+  }
+
+  turnrun(); goto();
+</script>
+
+</html>

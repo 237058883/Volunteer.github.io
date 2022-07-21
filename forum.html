@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/cart.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/elementui.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/elementui.css">
+  <title>论坛页面</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    body,
+    ul,
+    li {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*导航栏，高100，宽1280*/
+    .container1 {
+      width: 1280px;
+      height: 100px;
+    }
+
+    /*文章整体框架，高1680，宽1280*/
+    .forum-kuangjia {
+      width: 1280px;
+      height: 2080px;
+      background-color: rgb(255, 255, 255);
+      padding-left: 0px;
+    }
+
+    .top {
+      width: 1280px;
+      height: 50px;
+      background-color: rgb(117, 117, 117);
+      padding-left: 0px;
+    }
+
+    .top-nav {
+      font-size: 24px;
+      color: white;
+      float: right;
+      margin-right: 18px;
+      line-height: 50px;
+    }
+
+    .top-img {
+      height: 900px;
+      width: 1280px;
+      padding-left: 25px;
+      padding-top: 25px;
+
+    }
+
+    .top-img-biankuang {
+      height: 850px;
+      width: 1230px;
+      border: 1px rgb(209, 209, 209) solid;
+      padding-top: 10px;
+    }
+
+    #forum-neirong {
+      width: 1230px;
+      height: 900px;
+      margin-left: 25px;
+    }
+
+    #postbtn {
+      background-color: rgb(0, 88, 202);
+      border: 1px solid rgb(0, 88, 202);
+      width: 130px;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .list {
+      width: 1230px;
+      height: 952px;
+      border: 1px solid #ccc;
+    }
+
+    .list thead tr td {
+      background-color: rgb(238, 238, 238);
+      height: 40px;
+    }
+
+    .list thead tr td span {
+      margin-left: 16px;
+      color: rgb(93, 156, 214);
+    }
+
+    .list tr td {
+      border-bottom: 1px #ccc solid;
+      border-collapse: collapse;
+      height: 40px;
+      font-size: 18px;
+    }
+
+    .list tr td span:first-child {
+      color: rgb(93, 156, 214);
+      margin-left: 16px;
+    }
+
+    .list tr td span:last-child {
+      margin-left: 8px;
+    }
+
+    .list tr td p {
+      margin-left: 14px;
+      margin-top: 10px;
+    }
+
+    .list tr td img {
+      margin-left: 14px;
+    }
+
+    .list-page {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: rgb(93, 156, 214);
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，导航 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="home.html">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="information.html">志愿者填写</a></li>
+              <li><a href="information-finish.html">志愿者信息</a></li>
+              <li><a href="forum.html">论坛</a></li>
+              <li><a href="map.html">地图定位</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="storeloading.html">商城首页</a></li>
+              <li><a href="cartloading.html">购物车清单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="#">合作产品</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 第二部分 论坛页面 -->
+  <div class="container forum-kuangjia" id="postlist">
+    <div class="top">
+      <span class="top-nav" style="cursor: pointer;">注销</span>
+      <span class="top-nav">admin</span>
+    </div>
+    <div class="top-img">
+      <div class="top-img-biankuang">
+        <span style="font-size: 20px;margin-left: 25px;"><img src="img/彩虹桥.png" style="height:40px"> >> 首页 >> 志愿者视频
+        </span>
+        <video src="vedio/志愿者视频.mp4" style="width: 1180px;height: 700px;margin-left:25px;" controls></video>
+        <div style="text-align: center;font-size: 30px;color: blue;margin-top: 10px;">欢迎加入志愿者大家庭！</div>
+      </div>
+    </div>
+    <div id="forum-neirong">
+      <el-button type="primary" id="postbtn">发帖</el-button>
+      <div class="list">
+        <table>
+          <thead>
+            <tr>
+              <td colspan="2">
+                <span><a href="forum.html" style="color: blueviolet;cursor: pointer;">全部主题</a></span>
+                <span>
+                  <img src="img/forum/热门.png"><a href="forum-hot.html"
+                    style="cursor:pointer;color: rgb(230, 38, 31);">热门</a></span>
+                <span><a href="forum.html" style="cursor:pointer;color: rgb(46, 191, 196);">最新</a></span>
+                <span><a href="forum-hot.html" style="cursor:pointer;color: rgb(46, 191, 196);">热帖</a></span>
+                <span><a href="forum.html" style="cursor:pointer;color: rgb(46, 191, 196);">精华</a></span>
+              </td>
+              <td>作者</td>
+              <td>回复/查看</td>
+              <td>最后发表</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[分享]</span>
+                  <span>全国西部计划工作视频调度会召开</span></a>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-25 10:30</p>
+              </td>
+              <td style="width: 100px;">
+                <p>232/482</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-25 14:13</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[分享]</span> <span>弘扬五四精神 展现志愿风采
+                  </span></a>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-23 16:32</p>
+              </td>
+              <td style="width: 100px;">
+                <p>1608/1985</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-24 12:53</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[资源]</span>
+                  <span>第十三届中国青年志愿者优秀个人奖、组织奖、项目奖评选表彰活动...</span></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-22 10:30</p>
+              </td>
+              <td style="width: 100px;">
+                <p>1561/2158</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-23 12:13</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[资源]</span>
+                  <span>广东省志愿者协会资源</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-21 10:30</p>
+              </td>
+              <td style="width: 100px;">
+                <p>958/1308</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-02-24 9:05</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[新闻]</span>
+                  <span>中国青年志愿者协会发布《中国青年志愿者标志基本规范》</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-20 18:50</p>
+              </td>
+              <td style="width: 100px;">
+                <p>328/563</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-22 19:23</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[新闻]</span>
+                  <span>全国西部计划工作视频调度会召开</span></a>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-18 8:00</p>
+              </td>
+              <td style="width: 100px;">
+                <p>458/685</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-20 14:28</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[新闻]</span>
+                  <span>习近平给志愿者点赞！</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-12 20:30</p>
+              </td>
+              <td style="width: 100px;">
+                <p>2238/2645</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-19 15:58</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[新闻]</span> <span>浙江理工大学研支团 |
+                    “志智双扶”助力脱贫攻坚</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-10 15:12</p>
+              </td>
+              <td style="width: 100px;">
+                <p>428/811</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-22 13:01</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[分享]</span>
+                  <span>福建省志愿者义工中心信息分享</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-10 10:40</p>
+              </td>
+              <td style="width: 100px;">
+                <p>913/1020</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-19 14:15</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[公告]</span>
+                  <span>关于志愿者管理系统的更新公告</span></a>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-09 7:03</p>
+              </td>
+              <td style="width: 100px;">
+                <p>1003/1260</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-16 22:43</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="width: 50px;"><img src="img/文档.png"></td>
+              <td style="width: 700px;"><a href="forumdetail.html" target="_blank"><span>[资源]</span>
+                  <span>坚守公益之路</span></a></td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-08 10:10</p>
+              </td>
+              <td style="width: 100px;">
+                <p>604/950</p>
+              </td>
+              <td style="width: 200px;">
+                <p>admin</p>
+                <p>2022-03-13 16:16</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="list-page">
+        <el-pagination background layout="prev, pager, next" :total="1000">
+        </el-pagination>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: "#postlist",
+    })
+  </script>
+  <!-- 第三部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" /></a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

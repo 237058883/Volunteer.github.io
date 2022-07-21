@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <title>用户登录页面</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    /*导航栏，高100，宽1280*/
+    .container1 {
+      width: 1280px;
+      height: 100px;
+    }
+
+    /*文章整体框架，高1680，宽1280*/
+    .login-kuangjia {
+      width: 1280px;
+      height: 860px;
+      background-color: rgb(255, 255, 255);
+      padding-left: 0;
+      background: url("img/bg8.jpg");
+    }
+
+    .login-dakuang {
+      width: 1080px;
+      height: 660px;
+      background-color: rgb(255, 255, 255, 0.3);
+      margin-left: 100px;
+      margin-top: 100px;
+    }
+
+    .login-xiaokuang>form {
+      font-size: 30px;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .login-title {
+      font-size: 36px;
+      text-align: center;
+      padding-top: 80px;
+      color: rgb(255, 0, 0);
+    }
+
+    .btn {
+      font-size: 24px;
+      text-align: center;
+      height: 80px;
+      width: 460px;
+      margin-top: 20px;
+      background-color: rgb(255, 255, 255, 0.3);
+      border: 1px rgb(0, 0, 0) solid;
+      font-weight: 700;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      height: 30px;
+
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，导航 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="" onclick="alert('请先登录')">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="" onclick="alert('请先登录')">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="" onclick="alert('请先登录')">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="" onclick="alert('请先登录')">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- 第二部分 登录注册 -->
+  <div class="container login-kuangjia">
+    <div class="login-dakuang">
+      <div class="login-xiaokuang">
+        <div class="login-title">欢迎来到登录页面</div>
+        <br>
+        <form action="index-1.html">
+          用户名：<input type="text" size="18" name="username" id="username">
+          <div class="error" id="nameerror"></div>
+          密码：<input type="password" name="userpwd" id="userpwd">
+          <div class="error" id="userpwderror"></div>
+          <input type="button" class="btn" value="登录" id="logbtn"><br>
+          <input type="button" class="btn" value="注册" id="regbtn">
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    window.onload = function () {
+      var nameerrorDiv = document.getElementById("nameerror");
+      var usernameElt = document.getElementById("username");
+      usernameElt.onblur = function () {
+        var username = usernameElt.value;
+        username = username.trim();
+        if (username == "") {
+          nameerrorDiv.innerHTML = "用户名不能为空";
+        } else {
+          if (username.length < 5 || username.length > 14) {
+            nameerrorDiv.innerHTML = "用户名长度必须在5-14之间"
+          } else {
+            var regExp = /^[a-zA-Z0-9]+$/
+            var ok = regExp.test(username)
+            if (ok) {
+              nameerrorDiv.innerHTML = "";
+
+            } else {
+              nameerrorDiv.innerHTML = "用户名只能由数字和字母组成"
+            }
+          }
+        }
+      }
+      usernameElt.onfocus = function () {
+        nameerrorDiv.innerHTML = "";
+      }
+      var userpwderrorDiv = document.getElementById("userpwderror");
+      var userpwdElt = document.getElementById("userpwd");
+      userpwdElt.onblur = function () {
+        var userpwd = userpwdElt.value;
+        userpwd = userpwd.trim();
+        if (userpwd == "") {
+          userpwderrorDiv.innerHTML = "密码不能为空";
+        } else {
+          if (userpwd.length < 3 || userpwd.length > 14) {
+            userpwderrorDiv.innerHTML = "密码长度必须在3-14之间"
+          } else {
+            var regExp = /^[a-zA-Z0-9]+$/
+            var ok = regExp.test(userpwd)
+            if (ok) {
+              userpwderrorDiv.innerHTML = "";
+
+            } else {
+              userpwderrorDiv.innerHTML = "密码只能由数字和字母组成"
+            }
+          }
+        }
+      }
+      document.getElementById("userpwd").onfocus = function () {
+        userpwderrorDiv.innerHTML = "";
+      }
+
+      document.querySelector("#logbtn").onclick = function () {
+        usernameElt.focus();
+        usernameElt.blur();
+        document.getElementById("userpwd").focus();
+        document.getElementById("userpwd").blur();
+
+        if (userpwderrorDiv.innerHTML == "" && nameerrorDiv.innerHTML == "") {
+          var formObj = document.querySelector("#userForm");
+          alert("登录成功");
+          setTimeout("window.location.href = 'homeloading.html?backurl=' + window.location.href", 1000);
+
+        }
+      }
+      document.querySelector("#regbtn").onclick = function () {
+        window.location.href = "registerpage.html"
+      }
+
+    }
+  </script>
+  <!-- 第三部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" /></a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

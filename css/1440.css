@@ -1,0 +1,264 @@
+/*上半部分*/
+/*上半部分，分为两部分，导航和轮播图*/
+.nav1 {
+  /*整体导航栏，高100px，宽auto，内间距18px*/
+  width: auto;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+}
+* {
+  /*全局内外间距0*/
+  padding: 0;
+  margin: 0;
+}
+.aixing {
+  /*左边上角爱心div布局，高100px，宽auto，内间距18px*/
+  height: 100px;
+  width: auto;
+  padding-top: 18px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 0px #3cbd1c solid;
+}
+.xiala {
+  /*正上方下拉菜单布局，高100px，宽780*/
+  height: 100px;
+  width: 780px;
+  border: 0px #c91f1f solid;
+}
+.shouji {
+  /*右上方手机热线布局，高100px，宽auto，内间距10px*/
+  height: 100px;
+  width: auto;
+  border: 0px #8ec412 solid;
+  padding-top: 10px;
+}
+.lunbotu {
+  /*轮播图布局，宽1280px，高auto*/
+  height: auto;
+  width: 1280px;
+  border: 0px #000000 solid;
+}
+
+/*中间部分*/
+/*中间部分*/
+.container2 {
+  /*中间整体，高600px，宽auto，背景色白色*/
+  width: 1280px;
+  height: 1500px;
+  background-color: rgb(255, 255, 255);
+}
+.xinxizixun-kuangjia {
+  height: 300px;
+  width: 1280px;
+}
+
+.zixun > h1 {
+  font-size: 36px;
+  text-align: center;
+}
+.zixun > h1 > a {
+  color: #ff0000;
+}
+.zixun > h2 {
+  padding-top: 1px;
+  padding-left: 40px;
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: left;
+  color: black;
+  text-decoration: underline;
+}
+
+.gongneng-biaoti {
+  width: 1280px;
+  height: 130px;
+  padding-top: 20px;
+  background-color: rgb(180, 41, 41, 0);
+  margin-left: 0px;
+}
+.gongneng-size {
+  width: 320px;
+  padding-top: 20px;
+  height: 240px;
+  background-color: rgb(188, 230, 40, 0);
+  border-left: thick dotted #e6000071;
+  border-right: thick dotted #e6000071;
+}
+.gnkuangjia {
+  width: 1280px;
+  height: 240px;
+  background-color: rgb(28, 15, 214, 0);
+  margin-left: 0px;
+}
+
+.gn-row1 {
+  width: 320px;
+  height: 100px;
+  padding-left: 131px;
+}
+.gn-row2 {
+  width: 320px;
+  height: 60px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+}
+.gn-row3 {
+  width: 320px;
+  height: 100px;
+  text-align: center;
+  color: darkgray;
+}
+.xiahuaxian {
+  border-bottom: 3px solid #f00;
+}
+.tuopin {
+  height: 200px;
+  width: auto;
+  padding-top: 20px;
+  padding-left: 40px;
+  background-color: rgb(180, 41, 41, 0);
+  border: 0px #000000 solid;
+}
+
+.redian-kuangjiang {
+  height: 580px;
+  width: 1280px;
+  background-color: rgb(180, 41, 41, 0);
+  border: 0px #000000 solid;
+  padding-left: 0px;
+}
+.redian-top {
+  width: 1280px;
+  height: 100px;
+  margin-left: 0px;
+}
+.redian-tubiao {
+  height: 100px;
+  width: 100px;
+  padding-top: 10px;
+  border: 0px #000000 solid;
+}
+.redian-biaoti {
+  height: 100px;
+  width: 500px;
+  border: 0px #000000 solid;
+  padding-top: 12px;
+}
+.redian-biaoti > span {
+  font-size: 38px;
+  font-weight: 700;
+}
+.redian-xuanxiangka {
+  height: 100px;
+  width: 170px;
+  padding-top: 24px;
+  text-align: center;
+  border: 0px #000000 solid;
+  background-color: rgb(92, 81, 81, 0);
+}
+.weidianji {
+  font-size: 26px;
+  font-weight: 500;
+}
+.dianji {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: underline red;
+}
+.redian-xuanxiangka > a:active {
+  text-decoration: underline red;
+  color: #000000;
+}
+.redian-xuanxiangka > a:link {
+  color: #000000;
+  text-decoration: underline red;
+}
+.redian-xuanxiangka > a:visited {
+  text-decoration: underline red;
+  color: #000000;
+}
+.redian-xuanxiangka > a:hover {
+  text-decoration: underline red;
+  color: #000000;
+}
+.redian-bottom {
+  width: 1280px;
+  margin-left: 0px;
+  padding-left: 20px;
+}
+.redian-bottom-display {
+  display: none;
+}
+.rd-1 {
+  height: 220px;
+  width: 290px;
+  background-color: rgba(204, 54, 17, 0.2);
+}
+.rd-1 > a img {
+  height: 220px;
+  width: 290px;
+}
+.rd-2 > a img {
+  height: 220px;
+  width: 290px;
+}
+.rd-1 > h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #b92929;
+}
+.rd-1 > h2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(66, 66, 66);
+  line-height: 24px;
+}
+.rd-2 > h1 {
+  font-size: 24px;
+  text-align: center;
+  color: #b92929;
+}
+.rd-2 > h2 {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(66, 66, 66);
+  line-height: 24px;
+}
+.rd-2 {
+  height: 220px;
+  width: 290px;
+  background-color: rgba(204, 54, 17, 0.2);
+}
+.rd-1 > img {
+  width: 290px;
+  height: 220px;
+}
+.rd-2 > img {
+  width: 290px;
+  height: 220px;
+}
+.container3 {
+  /*中间整体，高320px，宽1920px，背景色白色*/
+  width: 100%;
+  height: 320px;
+  background-color: rgba(227, 226, 226);
+}
+.footleft {
+  padding-left: 20vh;
+  padding-top: 140px;
+}
+.footright {
+  width: 1080px;
+  height: 300px;
+  padding-left: 20vh;
+  padding-top: 40px;
+}
+.footright > p {
+  color: grey;
+}

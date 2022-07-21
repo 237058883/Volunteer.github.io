@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 引入包和框架 -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/xuanxiangka.js"></script>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/xiala.css" rel="stylesheet" />
+  <link href="css/1440.css" rel="stylesheet" />
+  <title>志愿者管理首页</title>
+  <!-- 基本样式 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container1 {
+      /*上半整体，高820px，宽1280*/
+      width: 1280px;
+      height: 820px;
+      background-color: rgb(24, 118, 196);
+    }
+
+    .xinxi {
+      height: 300px;
+      width: 640px;
+      background: url("img/background/main-bg.png");
+      background-color: rgba(255, 255, 255, 0.1);
+      border: thick dotted #e6000071;
+    }
+
+    .zixun {
+      height: 300px;
+      background-color: rgb(255, 255, 255);
+      border: thick dotted #e6000071;
+      background: url("img/background/main-bg-min.jpg");
+    }
+
+    .gongneng-kuangjia {
+      width: 1280px;
+      height: 380px;
+      background-color: rgb(22, 231, 102, 0);
+      background: url("img/background/main-bg.png");
+    }
+  </style>
+</head>
+
+<body background="img/bg5.jpg">
+  <!-- 上半部分整体布局框架，分为两部分，导航和轮播图 -->
+  <div class="container container1">
+    <div class="row nav1">
+      <!-- 第一部分 导航栏 -->
+      <div class="col-xs-2 aixing">
+        <!-- 左上角爱心图标 -->
+        <img src="img/爱心.png" />
+      </div>
+      <div class="col-xs-7 xiala">
+        <!-- 中间下拉导航 -->
+        <ul>
+          <li>
+            <a href="home.html">
+              <font color="white">首页
+                <p>HOME PAGE</p>
+              </font>
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">社区互动
+                <p>COMMUNITY</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="information.html">志愿者填写</a></li>
+              <li><a href="information-finish.html">志愿者信息</a></li>
+              <li><a href="forumloading.html">论坛</a></li>
+              <li><a href="map.html">地图定位</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">购物商城
+                <p>STORE</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="storeloading.html">商城首页</a></li>
+              <li><a href="cartloading.html">购物车清单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="#">
+              <font color="white">商业合作
+                <p>COOPERATION</p>
+              </font>
+            </a>
+            <ul>
+              <li><a href="about.html">关于我们</a></li>
+              <li><a href="#">合作产品</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-3 shouji">
+        <!-- 右上角手机图标和文本框 -->
+        <a href="#"><img src="img/手机.png" id="tel" /></a>
+        <input class="t1" type="text" name="" id="" value="请留下您的电话号码" />
+        <p style="
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              font-family: 仿体;
+              padding-left: 54px;
+            ">
+          电话热线:440-188188
+        </p>
+      </div>
+    </div>
+    <!-- 第二部分 轮播图 2s自动跳转-->
+    <div class="row lunbotu">
+      <div id="carousel-example-generic" data-interval="2000" class="carousel slide" data-ride="carousel">
+        <!-- 轮播图中间的小圆点 -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+
+        <!-- 包含图片 -->
+        <div class="carousel-inner" role="listbox">
+          <!--每个div是一张图片-->
+          <div class="item active">
+            <a href="http://www.zgzyz.org.cn/" target="_blank"><img src="img/banner11.jpg" alt="1" /></a>
+            <div class="carousel-caption">
+              <font size="9">共建美好社会，一起做志愿者！</font>
+            </div>
+          </div>
+          <div class="item">
+            <a href="forum.html"><img src="img/banner22.jpg" alt="2" /></a>
+            <div class="carousel-caption">
+              <font size="9">志愿者交流会</font>
+            </div>
+          </div>
+          <div class="item">
+            <a href="https://www.beijing2022.cn/" target="_blank"><img src="img/banner33.jpg" alt="3" /></a>
+            <div class="carousel-caption">
+              <font size="9">2022北京冬奥会</font>
+            </div>
+          </div>
+        </div>
+
+        <!-- 前后页控制按钮 -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div class="row"></div>
+    </div>
+  </div>
+  <!-- 中间整体布局框架 -->
+  <!-- 第三部分 基本信息和资讯 -->
+  <div class="container container2">
+    <div class="row xinxizixun-kuangjia">
+      <!-- 基本信息 -->
+      <div class="col-xs-6 xinxi">
+        <div class="row">
+          <div class="col-xs-5"><a href="information-go.html">
+              <img src="img/基本信息.png" style="padding-top: 86px; padding-left: 50px" /></a>
+          </div>
+          <div class="col-xs-7" style="padding-top: 50px">
+            <h1>用户：admin</h1>
+            <h1>等级： <a href="#">1</a>&nbsp;&nbsp;&nbsp;级</h1>
+            <h1>可用积分： &nbsp;<a href="#">0</a> &nbsp;&nbsp;分</h1>
+          </div>
+        </div>
+      </div>
+      <!-- 资讯 -->
+      <div class="col-xs-6 zixun">
+        <h1><a href="news2.html" target="_blank">习近平为社区志愿者点赞</a></h1>
+        <h2>
+          <a href="news1.html" target="_blank">【新闻】河南：郑州市民政局关于对违法违规志愿服务行为开展投...</a>
+        </h2>
+        <h2>
+          <a href="#">【热点】最佳志愿服务组织：宁夏义工志愿服务联合会</a>
+        </h2>
+        <h2>
+          <a href="news3.html" target="_blank">【热点】最美志愿者：潘浩然</a>
+        </h2>
+        <h2>
+          <a href="#">【公告】志愿服务项目： “绿色希望”流动儿童关爱项目</a>
+        </h2>
+      </div>
+    </div>
+    <!-- 第三部分 系统管理功能 分为图标和文字 -->
+    <!-- 整体框架 -->
+    <div class="row gongneng-kuangjia">
+      <!-- 标题框架，字体：大小50，居中，粗细700，风格华文彩云 -->
+      <div class="row gongneng-biaoti">
+        <h1 style="
+              font-size: 50px;
+              text-align: center;
+              font-family: 华文彩云;
+              font-weight: 700;
+            ">
+          志愿者管理系统
+        </h1>
+      </div>
+      <!-- 功能模块的内部框架 -->
+      <div class="row gnkuangjia">
+        <div class="col-xs-3 gongneng-size">
+          <!-- 分为三行（row），第一行是图标，第二、三行是文字描述 -->
+          <div class="row gn-row1">
+            <!-- 各个功能模块分为四列（col） -->
+            <a href="information.html"><img src="img/登记.png" /></a>
+          </div>
+          <div class="row gn-row2">
+            <span class="xiahuaxian">志愿者</span>
+            登记
+          </div>
+          <div class="row gn-row3">
+            志愿者实名注册<br />成为志愿者，参加志愿者项目
+          </div>
+        </div>
+        <div class="col-xs-3 gongneng-size">
+          <div class="row gn-row1">
+            <a href="forum.html"><img src="img/信息证明.png" /></a>
+          </div>
+          <div class="row gn-row2">
+            <span class="xiahuaxian">项目</span>发布
+          </div>
+          <div class="row gn-row3">
+            志愿者讨论聚集地<br />志愿者项目发布、接受
+          </div>
+        </div>
+        <div class="col-xs-3 gongneng-size">
+          <div class="row gn-row1">
+            <a href="map.html"><img src="img/地图.png" /></a>
+          </div>
+          <div class="row gn-row2"><span class="xiahuaxian">地图</span></div>
+          <div class="row gn-row3">附近志愿者项目<br />附近志愿者队伍</div>
+        </div>
+        <div class="col-xs-3 gongneng-size">
+          <div class="row gn-row1">
+            <a href="store.html"><img src="img/商城点击.png" /></a>
+          </div>
+          <div class="row gn-row2"><span class="xiahuaxian">商城</span></div>
+          <div class="row gn-row3">
+            商城积分兑换奖品<br />完成志愿者服务获得积分
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <!-- 第五部分 脱贫攻坚战点击事件图标 -->
+    <div class="row tuopin">
+      <img src="img/2020.png" />
+    </div>
+    <div>
+      <!-- 第六部分 时事热点 -->
+      <div class="row redian-kuangjiang" id="tb1">
+        <div class="row redian-top">
+          <div class="col-xs-4 redian-tubiao">
+            <img src="img/太阳.png" />
+          </div>
+          <div class="col-xs-4 redian-biaoti">
+            <span>时事热点</span>
+          </div class="warp">
+          <div class="col-xs-1 redian-xuanxiangka"><a href="javascript:" class="dianji">志愿者</a></div>
+          <div class="col-xs-1 redian-xuanxiangka"><a href="javascript:" class="weidianji">志愿队伍</a></div>
+          <div class="col-xs-1 redian-xuanxiangka"><a href="javascript:" class="weidianji">志愿项目</a></div>
+          <div class="col-xs-1 redian-xuanxiangka"><a href="javascript:" class="weidianji">志愿社区</a></div>
+        </div>
+        <div class="row redian-bottom" id="bottom">
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news3.html"><img src="img/read/rd1.png" title="最美志愿者：潘浩然" /></a>
+            </div>
+            <div class="row rd-2">
+              <h1>最美志愿者：潘浩然</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;姓名：潘浩然：性别：男：出生年月：1997年11月4日：政治面貌：中国民主建国会会员：所在志愿服务组织：
+                广东省众德慈善基金会志愿者服务队：主要服务项目：防控疫情...</h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>最美志愿者：陆玫</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;最美志愿者：陆玫;日期：2021-05-08：来源：中国文明网;姓名：陆玫;性别：女;出生年月：1971.10.24;政治面貌：群众;所在志愿服务组织：山西天龙救援队;主要服务...
+              </h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news3.html"><img src="img/read/rd2.jpg" title="最美志愿者：陆玫" /></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news3.html"><img src="img/read/rd3.jpg" title="志愿者：王凤进" /></a>
+            </div>
+            <div class="row rd-2">
+              <h1>志愿者：王凤进</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;王凤进和雷锋车队队员在一起;王凤进,女,生于1958年5月,首都的士雷锋车队。2007年10月15日，王凤进聆听十七大报告，看到祖国日益繁荣昌盛，心中萌生了成立一支雷锋车队...
+              </h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>张晓艳事迹</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;张晓艳是中日友好医院皮肤科主任医师，北京大学医学部教授、博士生导师，北京市第十四届人大代表，是全国社区医疗服务志愿团团长和发起人。2015年...</h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news3.html"><img src="img/read/rd4.png" title="张晓艳事迹" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="row redian-bottom-display" id="bottom">
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>最佳志愿服务组织...</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;组织名称：广东省一心公益基金会;成立时间：2013年6月4日;注册志愿者人数：457;累计开展志愿服务时数：182579;人均开展志愿服务时数：400;组织负责人：谢东祥
+              </h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news4.html"><img src="img/read/rd5.jpg" /></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news4.html"><img src="img/read/rd6.jpg"></a>
+            </div>
+            <div class="row rd-2">
+              <h1>最佳志愿服务组织...</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;组织名称：宁夏义工志愿服务联合会（原宁夏义工联合会）;成立时间：2011年12月;注册志愿者人数：16万;累计开展志愿服务时数：服务总时长54.62万小时...
+              </h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>志愿服务社区：海淀区...</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;十多年来，北科大社区一直活跃着一支不断壮大的志愿服务队伍，他们关注居民日常生活大事小情，协助维护社区秩序稳定,帮助居民化解矛盾解决难题，组织居民开展多彩活动...
+              </h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news4.html"><img src="img/read/rd7.jpg" /></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news4.html"><img src="img/read/rd8.jpg" alt="" /></a>
+            </div>
+            <div class="row rd-2">
+              <h1>怀柔应急救援协会</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;怀柔应急救援协会，于2011年正式成立，是应急救援领域的专业化民间组织，除了对急需救助的求助者进行救助，还经常性的向公众普及应急管理知识...</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row redian-bottom-display" id="bottom">
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news5.html"><img src="img/read/rd9.jpg" /></a>
+            </div>
+            <div class="row rd-2">
+              <h1>最佳志愿服务项目...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;项目名称：“幸福星”心理关爱热线服务项目：开展项目的时间：自2015年开始到现在：参与项目的注册志愿者人数：参与热线接值守志愿者有200余...</h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>最佳志愿服务项目...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;项目名称：华山医院“医心关怀”健康科普志愿服务项目：开展项目的时间：2015年3月：参与项目的注册志愿者人数：300人：项目负责人：伍蓉...</h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news5.html"><img src="img/read/rd10.jpg" /></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="news5.html"><img src="img/read/rd11.jpg"></a>
+            </div>
+            <div class="row rd-2">
+              <h1>志愿服务项目...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;首都职工志愿北京福田康明团队(企业责任委员会)在北汽集团工会和首都职工志愿北汽集团服务总队的领导下，开展“绿色希望——流动儿童关爱项目...</h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>“吹响志愿集结号”...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;2012年，海淀团区委以区志愿服务联合会为枢纽和平台，策划推广了“海淀区社区志愿日”项目，将每月第一个星期六确立为“社区志愿日”，结合每月的节日特点...
+              </h2>
+            </div>
+            <div class="row rd-2">
+              <a href="news5.html"><img src="img/read/rd12.jpg"></a>
+            </div>
+          </div>
+        </div>
+        <div class="row redian-bottom-display" id="bottom">
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>最美志愿服务社区...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;社区名称: 北京市通州区中仓街道白将军社区;负责人姓名: 李利;社区注册志愿者人数: 933人;注册志愿者人数占社区常住人口的比例: 28%</h2>
+            </div>
+            <div class="row rd-2">
+              <a href="#"><img src="img/read/rd13.jpg"></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="#"><img src="img/read/rd14.jpg"></a>
+            </div>
+            <div class="row rd-2">
+              <h1>最美志愿服务社区...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;社区名称: 湖北省宜昌市西陵区云集街道果园路社区;负责人姓名: 陈正庆社区注册志愿者人数:894人注册志愿者人数占社区常住人口的比例: 16.1%</h2>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <h1>东城区龙潭街道左安</h1>
+              <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;左安浦园社区位于北京市东城区龙潭地区南部,社区实有人口7606人，注册志愿者1172人，注册比例15.41%。社区党委打造“1+2+N”志愿服务模式，围绕“党委统一领导...
+              </h2>
+            </div>
+            <div class="row rd-2">
+              <a href="#"><img src="img/read/rd15.jpg"></a>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <div class="row rd-1">
+              <a href="#"><img src="img/read/rd16.jpg"></a>
+            </div>
+            <div class="row rd-2">
+              <h1>北京通州：七百...</h1>
+              <h2>&nbsp;&nbsp;&nbsp;&nbsp;今年暑期，北京市通州区教委协同文明办联合各街道开展“等灯
+                等灯”红绿灯文明引导活动，发动700余个志愿家庭参与其中，覆盖全区22个主要路口。7月28日，通州...</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var btns = document.querySelectorAll(".redian-xuanxiangka a");
+    var divs = document.querySelectorAll(".redian-kuangjiang #bottom");
+    var tel = document.querySelector("#tel");
+    tel.onclick = function () {
+      alert("感谢您的订阅，后续信息将会以短信通知您！")
+    }
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].index = i;
+      btns[i].onclick = function () {
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].className = "weidianji";
+          divs[i].className = "redian-bottom-display";
+        }
+        this.className = "dianji";
+        divs[this.index].className = "redian-bottom";
+      }
+
+    } console.log(btns[i])
+  </script>
+  <!-- 第七部分 页脚 -->
+  <footer>
+    <div class="container container3">
+      <div class="row topfoot">
+        <div class="col-lg-5 footleft">
+          <a href="#"><img src="img/topfoot1.png" /></a>
+        </div>
+        <div class="col-lg-7 footright">
+          <p>
+            广理互动服务|服务条款|隐私保护指引|儿童隐私保护指引|广理管理招聘|广理志愿者客服|功能列表|广告服务及商务合作
+          </p>
+          <p>广理公司版权所有</p>
+          <p> © 开发者：18计科潘浩然</font>
+          </p>
+          <p> © 学号：20180411210438</p>
+          <p>
+            本网站系统适合18+岁的用户使用；为了您的健康，请合理控制上网时间。
+          </p>
+          <p>！！！请不要泄露个人银行卡信息资料！！！</p>
+          <p>
+            广州理工学院
+            |粤网文[2020]3396-195号|（署）网出证（粤）字第054号
+
+          </p>
+          <p>
+
+            批准文号：新出审字[2011]310号 |文网进字[2022] 004号 |
+            出版物号：ISBN
+            9527-7-4396-777-7|全国文化市场统一举报电话：18823425682
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
